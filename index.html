@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Erich Layones | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+body{
+    display:flex;
+    background:#0d1117;
+    color:#e6edf3;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:230px;
+    height:100vh;
+    background:#161b22;
+    padding:40px 20px;
+    position:fixed;
+}
+
+.sidebar h2{
+    color:#58a6ff;
+    margin-bottom:40px;
+    text-align:center;
+}
+
+.sidebar a{
+    display:block;
+    color:#c9d1d9;
+    text-decoration:none;
+    margin:18px 0;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    color:#58a6ff;
+    transform:translateX(5px);
+}
+
+/* MAIN CONTENT */
+.main{
+    margin-left:230px;
+    padding:60px;
+    width:100%;
+}
+
+/* HERO */
+.hero{
+    margin-bottom:80px;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.typing{
+    color:#58a6ff;
+    font-weight:600;
+    margin-top:10px;
+    font-size:20px;
+}
+
+/* SECTION */
+section{
+    margin-bottom:80px;
+}
+
+h3{
+    font-size:28px;
+    margin-bottom:30px;
+    color:#58a6ff;
+}
+
+/* CARD */
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#161b22;
+    padding:25px;
+    border-radius:12px;
+    border:1px solid #30363d;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#58a6ff;
+}
+
+/* SKILLS */
+.skill{
+    margin-bottom:18px;
+}
+
+.skill-name{
+    margin-bottom:6px;
+}
+
+.skill-bar{
+    background:#30363d;
+    height:8px;
+    border-radius:10px;
+}
+
+.skill-fill{
+    height:8px;
+    border-radius:10px;
+    background:#58a6ff;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    background:#58a6ff;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:15px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#1f6feb;
+}
+
+/* FOOTER */
+footer{
+    margin-top:50px;
+    font-size:14px;
+    color:#8b949e;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .sidebar{
+        display:none;
+    }
+    .main{
+        margin-left:0;
+        padding:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Erich Layones</h2>
+    <a href="#about">About</a>
+    <a href="#objective">Objective</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<div class="main">
+
+    <div class="hero" id="about">
+        <h1>Erich C. Layones</h1>
+        <div class="typing" id="typing"></div>
+    </div>
+
+    <section id="objective">
+        <h3>Career Objective</h3>
+        <p>
+            A dedicated BSIT student aiming to develop practical experience 
+            in programming and system development while continuously improving
+             my technical and problem-solving skills.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h3>Skills</h3>
+        <div class="card-grid">
+            <div class="card">
+                <div class="skill">
+                    <div class="skill-name">HTML</div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-name">CSS</div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width:80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h3>Projects</h3>
+        <div class="card-grid">
+            <div class="card">
+                <h4>Bantayan Furniture Online System</h4>
+    
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h3>Contact</h3>
+        <p>Email: layoneserich@gmail.com</p>
+        <p>GitHub: github.com/erichlayones</p>
+    </section>
+
+
+
+</div>
+
+<script>
+const text = "BS Information Technology | 3rd Year";
+let i = 0;
+
+function typingEffect(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 50);
+    }
+}
+typingEffect();
+</script>
+
+</body>
+</html>
